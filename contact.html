@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row shadow-sm p-4 bg-white rounded">
+        <div class="col-md-5 border-end">
+            <h2 class="mb-4">Contact Details</h2>
+            <div class="mb-3">
+                <p class="text-muted mb-1">Full Name</p>
+                <h5>{{ name }}</h5>
+            </div>
+            <div class="mb-3">
+                <p class="text-muted mb-1">Email Address</p>
+                <h5><a href="mailto:{{ email }}" class="text-decoration-none text-dark">{{ email }}</a></h5>
+            </div>
+            <div class="mb-3">
+                <p class="text-muted mb-1">Phone Number</p>
+                <h5>{{ number }}</h5>
+            </div>
+            <div class="mt-4">
+                <p class="small text-secondary">Based in Oriental Region, Morocco. Available for laboratory technical support and web development projects.</p>
+            </div>
+        </div>
+
+        <div class="col-md-7 ps-md-5">
+            <h2 class="mb-4">Send a Message</h2>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-control" rows="5" placeholder="How can I help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">Submit Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
